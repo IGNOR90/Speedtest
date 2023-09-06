@@ -1,11 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
+from config import *
 
 CONFIG = {
-    'login': 'artur',
-    'password': 'adm9029902901',
-    'login-url': 'https://ex.spi.uz/auth/login',
-    'client-url': 'https://ex.spi.uz/abonents/abonent/edit/206'
+    'login': config['login'],
+    'password': config['password'],
+    'login-url': config['login-url'],
+    'client-url': config['client-url']
 }
 
 
