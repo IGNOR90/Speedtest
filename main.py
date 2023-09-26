@@ -26,7 +26,6 @@ def find(serversList, server_id):
             return server
     return None
 
-
 def change_tariff_name(tariff_name_id):
     parser = ExBillParser()
     getPage = parser.request('GET', url=CONFIG.get('client-url'))
@@ -72,4 +71,4 @@ def run(sleep):
 
 
 if __name__ == "__main__":
-    run(30)
+    run(3600)
