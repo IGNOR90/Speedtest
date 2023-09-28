@@ -37,17 +37,18 @@ def change_tariff_name(tariff_name_id):
 
 
 tariff_names = {
-    512: '10 Мбит',
-    515: '100 Мбит'
+    563: '10',
+    564: '100'
 }
 
 
 def spTest(tariff_name_id):
+    change_tariff_name(tariff_name_id)
     st = Tester.Speedtest()
     setServer = find(serverList, '6386')
     st.get_best_server([setServer])
     st.set_best(setServer)
-
+     
     obj = {
         'client': config['client'],
         'server_ping': st.results.ping,
@@ -58,18 +59,18 @@ def spTest(tariff_name_id):
     }
 
     send_test_data(obj)
-    time.sleep(5)
+    time.sleep(10)
 
 
 def run(sleep):
     while True:
         try:
-            spTest(512)
-            spTest(515)
+            spTest(563)
+            spTest(564)
         except:
             print("ERROR spTest")
         time.sleep(sleep)
 
 
 if __name__ == "__main__":
-    run(30)
+    run(config['sleep'])

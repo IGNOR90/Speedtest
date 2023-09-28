@@ -4,6 +4,7 @@ config = {
     "name": "Артур PC",
     "client": "Артур PC",
     "client_ip": whatismyip.whatismyip(),
+    "sleep": 60,
     "server_url": "",
     "login": "",
     "password": "",
