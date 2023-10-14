@@ -31,12 +31,6 @@ def find(serversList, server_id):
     return None
 
 
-tariff_names = {
-    564: '100',
-    563: '10',
-}
-
-
 def config_get():
     obj = {
         'client_ip': whatismyip.whatismyip()
@@ -71,12 +65,12 @@ def start_test():
         print(tarif_, '---', tarif_name)
 
         oob = change_tariff(data['bill_user_id'], tarif_)
-        # obj = speedtest()
+        # obj = speedtest(tarif_name)
         # send_test_data(obj)
         time.sleep(60)
 
 
-def speedtest():
+def speedtest(tarif_name):
     st = Tester.Speedtest()
     setServer = find(serverList, '6386')
     st.get_best_server([setServer])
@@ -85,7 +79,7 @@ def speedtest():
         'server_ping': st.results.ping,
         'server_download': round(st.download() / 1000 / 1000, 1),
         'server_upload': round(st.upload() / 1000 / 1000, 1),
-        'client_ip': _config['client_ip']
+        'client_ip': tarif_name
     }
 
     return obj
