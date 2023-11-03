@@ -53,7 +53,6 @@ def change_tariff(bill_user_id, tariff_id):
 def start_test():
     data = config_get()
     tarif_data = {}
-    obj = {}
 
     for a in data['tarif_lists']:
         tarif_data[a['tariff_id']] = a['tariff_name']
