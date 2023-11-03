@@ -36,11 +36,8 @@ def config_get():
     obj = {}
     obj['client_ip'] = _config['client_ip']
     response = requests.post(url='https://panel.spi.uz/speedtest/api/config', json=obj)
-    print('-----1', response)
     client_data = response.text
-    print('-----2', client_data)
     json_object = json.loads(client_data)
-    print('-----3', json_object)
 
     return json_object
 
@@ -49,15 +46,12 @@ def change_tariff(bill_user_id, tariff_id):
     obj = {}
     obj['bill_user_id'] = bill_user_id
     obj['tariff_id'] = tariff_id
-    print(obj)
     req = requests.post(url='https://panel.spi.uz/speedtest/api/change_tariff', json=obj)
-    print(req.text)
     return ''
 
 
 def start_test():
     data = config_get()
-    print(data)
     tarif_data = {}
 
     for a in data['tarif_lists']:
@@ -65,7 +59,6 @@ def start_test():
 
     for tarif_ in tarif_data:
         tariff_name = tarif_data[tarif_]
-        print(tarif_, '---', tariff_name)
 
         oob = change_tariff(data['bill_user_id'], tarif_)
         # obj = speedtest(tariff_name)
