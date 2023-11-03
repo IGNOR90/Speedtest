@@ -65,7 +65,7 @@ def start_test():
         obj = main_speed_test(tariff_name)
         print('1 ')
         print(obj)
-        send_test_data(json.dumps(obj.decode('utf8').replace("'", '"')))
+        send_test_data(json.dumps(obj))
         print('2')
         time.sleep(30)
 
