@@ -68,10 +68,10 @@ def start_test():
         time.sleep(30)
 
 
-def run(sleep):
+def run(sleep:None):
     while True:
         start_test()
-        time.sleep(sleep)
+        time.sleep(3600)
 
 
 if __name__ == "__main__":
