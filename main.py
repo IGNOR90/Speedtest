@@ -75,25 +75,6 @@ def start_test():
         time.sleep(30)
 
 
-def speedtest(tariff_name):
-    st = Tester.Speedtest()
-    setServer = find(serverList, '6386')
-    st.get_best_server([setServer])
-    st.set_best(setServer)
-    # obj = {
-    #     'server_ping': st.results.ping,
-    #     'server_download': round(st.download() / 1000 / 1000, 1),
-    #     'server_upload': round(st.upload() / 1000 / 1000, 1),
-    #     'tariff_name': tariff_name,
-    #     'client_ip': _config['client_ip'],
-    #     'test_url': st.results.dict()
-    # }
-
-    print(st.results.share())
-
-    # return obj
-
-
 def run(sleep):
     while True:
         start_test()

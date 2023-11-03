@@ -1417,11 +1417,11 @@ class Speedtest(object):
                         extension = [ext]
                         break
         if not urlparts or not extension:
-            raise InvalidSpeedtestMiniServer('Invalid Speedtest Mini Server: '
+            raise InvalidSpeedtestMiniServer('Invalid speedtest Mini Server: '
                                              '%s' % server)
 
         self.servers = [{
-            'sponsor': 'Speedtest Mini',
+            'sponsor': 'speedtest Mini',
             'name': urlparts[1],
             'd': 0,
             'url': '%s/speedtest/upload.%s' % (url.rstrip('/'), extension[0]),
@@ -1785,7 +1785,7 @@ def parse_args():
     parser.add_argument('--exclude', type=PARSER_TYPE_INT, action='append',
                         help='Exclude a server from selection. Can be '
                              'supplied multiple times')
-    parser.add_argument('--mini', help='URL of the Speedtest Mini server')
+    parser.add_argument('--mini', help='URL of the speedtest Mini server')
     parser.add_argument('--source', help='Source IP address to bind to')
     parser.add_argument('--timeout', default=10, type=PARSER_TYPE_FLOAT,
                         help='HTTP timeout in seconds. Default 10')
