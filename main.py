@@ -53,6 +53,7 @@ def change_tariff(bill_user_id, tariff_id):
 def start_test():
     data = config_get()
     tarif_data = {}
+    obj = {}
 
     for a in data['tarif_lists']:
         tarif_data[a['tariff_id']] = a['tariff_name']
@@ -63,7 +64,7 @@ def start_test():
         oob = change_tariff(data['bill_user_id'], tarif_)
         obj = main_speed_test(tariff_name)
         print('1')
-        send_test_data(obj)
+        send_test_data(json.dumps(obj))
         print('2')
         time.sleep(30)
 
