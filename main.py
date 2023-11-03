@@ -3,6 +3,7 @@ import json
 import requests
 import whatismyip
 import spt as Tester
+from test import main_speed_test
 
 # ip = requests.get("https://api.ipify.org/?format=json").json()
 file = open('serverList.json')
@@ -67,8 +68,10 @@ def start_test():
         print(tarif_, '---', tariff_name)
 
         oob = change_tariff(data['bill_user_id'], tarif_)
-        obj = speedtest(tariff_name)
-        send_test_data(obj)
+        # obj = speedtest(tariff_name)
+        obj = main_speed_test(tariff_name)
+        print(obj)
+        # send_test_data(obj)
         time.sleep(30)
 
 
@@ -77,17 +80,18 @@ def speedtest(tariff_name):
     setServer = find(serverList, '6386')
     st.get_best_server([setServer])
     st.set_best(setServer)
-    obj = {
-        'server_ping': st.results.ping,
-        'server_download': round(st.download() / 1000 / 1000, 1),
-        'server_upload': round(st.upload() / 1000 / 1000, 1),
-        'tariff_name': tariff_name,
-        'client_ip': _config['client_ip'],
-    }
+    # obj = {
+    #     'server_ping': st.results.ping,
+    #     'server_download': round(st.download() / 1000 / 1000, 1),
+    #     'server_upload': round(st.upload() / 1000 / 1000, 1),
+    #     'tariff_name': tariff_name,
+    #     'client_ip': _config['client_ip'],
+    #     'test_url': st.results.dict()
+    # }
 
-    print(obj)
+    print(st.results.share())
 
-    return obj
+    # return obj
 
 
 def run(sleep):
