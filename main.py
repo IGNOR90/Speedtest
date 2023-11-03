@@ -64,7 +64,7 @@ def start_test():
         # obj = speedtest(tariff_name)
         obj = main_speed_test('tariff_name')
         print(type(obj))
-        # send_test_data(obj)
+        send_test_data(obj)
         time.sleep(30)
 
 
