@@ -75,4 +75,5 @@ def run(sleep):
 
 
 if __name__ == "__main__":
-    run(_config['timeout'])
+    # run(_config['timeout'])
+    run(3600)
