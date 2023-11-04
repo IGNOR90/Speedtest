@@ -59,7 +59,8 @@ def start_test():
         oob = change_tariff(data['bill_user_id'], tarif_)
         obj = main_speed_test(tariff_name)
         dataset = obj
-        print(dataset)
+        print("-1- ", dataset[1])
+        print("-2- ", dataset[2])
         send_test_data(dataset)
 
         time.sleep(30)
@@ -74,4 +75,3 @@ def run(sleep):
 if __name__ == "__main__":
     # run(_config['timeout'])
     run(_config['timeout'])
-
