@@ -60,7 +60,7 @@ def start_test():
         obj = main_speed_test(tariff_name)
         dataset = obj
         for k in dataset:
-            print(f"-{k}- ")
+            print(k)
             print(dataset['k'])
         send_test_data(dataset)
 
