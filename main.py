@@ -60,7 +60,7 @@ def start_test():
         obj = main_speed_test(tariff_name)
         dataset = obj
         for k, v in dataset:
-            print("-1- ", k)
+            print("-1- ", k, v)
         send_test_data(dataset)
 
         time.sleep(30)
