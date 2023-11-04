@@ -61,6 +61,7 @@ def start_test():
         dataset = obj
         for k, v in dataset:
             print(f"-{k}- ")
+            print(dataset['k'])
         send_test_data(dataset)
 
         time.sleep(30)
