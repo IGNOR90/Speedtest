@@ -65,7 +65,7 @@ def start_test():
         print('1 ')
         print(obj)
         print(type(obj))
-        send_test_data(json.dumps(str(obj, encoding='utf-8')))
+        send_test_data(json.dumps(obj.decode('utf-8')))
         print()
         print('2')
         time.sleep(30)
