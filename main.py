@@ -64,7 +64,7 @@ def start_test():
             data_r[k] = obj[k]
             print("-----------------", obj[k])
             # print(obj[k])
-            send_test_data(json.dumps(obj[k]))
+            send_test_data(obj[k])
             print("SendData")
 
         time.sleep(30)
