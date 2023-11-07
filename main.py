@@ -62,9 +62,7 @@ def start_test():
         data_r = {}
         for k in obj:
             data_r[k] = obj[k]
-            print(data_r)
-
-        # send_test_data(obj)
+            send_test_data(obj)
 
         time.sleep(30)
 
