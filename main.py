@@ -63,12 +63,10 @@ def start_test():
         data_r = {}
         for k in obj:
             data_r[k] = obj[k]
-            print("-----------------", obj[k])
             obj_k = obj[k]
             obj_k['bill_user_id'] = data['bill_user_id']
 
             send_test_data(obj[k])
-            print("SendData")
 
         time.sleep(30)
 
