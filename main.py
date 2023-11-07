@@ -61,7 +61,8 @@ def start_test():
         obj = main_speed_test(tariff_name)
         data_r = {}
         for k in obj:
-            data_r[k] = obj[k]
+            # data_r[k] = obj[k]
+            print(obj[k])
             send_test_data(obj[k])
             print("SendData")
 
