@@ -62,7 +62,7 @@ def start_test():
         data_r = {}
         for k in obj:
             data_r[k] = obj[k]
-            print(obj[k])
+            print("-----------------", obj[k])
             # print(obj[k])
             # send_test_data(obj[k])
             print("SendData")
