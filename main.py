@@ -51,6 +51,7 @@ def change_tariff(bill_user_id, tariff_id):
 
 def start_test():
     data = config_get()
+    print(data)
     tarif_data = {}
     obj = {}
     for a in data['tarif_lists']:
@@ -63,7 +64,9 @@ def start_test():
         for k in obj:
             data_r[k] = obj[k]
             print("-----------------", obj[k])
-            # print(obj[k])
+            obj_k = obj[k]
+            obj_k['bill_user_id'] = data['bill_user_id']
+
             send_test_data(obj[k])
             print("SendData")
 
