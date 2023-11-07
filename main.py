@@ -59,11 +59,12 @@ def start_test():
         tariff_name = tarif_data[tarif_]
         oob = change_tariff(data['bill_user_id'], tarif_)
         obj = main_speed_test(tariff_name)
-
+        data_r = {}
         for k in obj:
-            print(k)
-            print(obj[k])
-        send_test_data(obj)
+            data_r[k] = obj[k]
+            print(data_r)
+
+        # send_test_data(obj)
 
         time.sleep(30)
 
