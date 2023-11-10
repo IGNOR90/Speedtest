@@ -67,6 +67,7 @@ def start_test():
             obj_k['bill_user_id'] = data['bill_user_id']
 
             send_test_data(obj[k])
+            print(obj[k])
 
         time.sleep(30)
 
