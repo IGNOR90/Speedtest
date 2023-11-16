@@ -71,7 +71,7 @@ def start_test():
 
             time.sleep(30)
     else:
-        obj = main_speed_test('Пользовательский тариф')
+        obj = main_speed_test('Пользовательский тариф.')
         data_r = {}
         for k in obj:
             data_r[k] = obj[k]
