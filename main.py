@@ -53,12 +53,25 @@ def start_test():
     data = config_get()
     tarif_data = {}
     obj = {}
-    for a in data['tarif_lists']:
-        tarif_data[a['tariff_id']] = a['tariff_name']
-    for tarif_ in tarif_data:
-        tariff_name = tarif_data[tarif_]
-        oob = change_tariff(data['bill_user_id'], tarif_)
-        obj = main_speed_test(tariff_name)
+    if len(data[''] > 1):
+        for a in data['tarif_lists']:
+            tarif_data[a['tariff_id']] = a['tariff_name']
+        for tarif_ in tarif_data:
+            tariff_name = tarif_data[tarif_]
+            oob = change_tariff(data['bill_user_id'], tarif_)
+            obj = main_speed_test(tariff_name)
+            data_r = {}
+            for k in obj:
+                data_r[k] = obj[k]
+                obj_k = obj[k]
+                obj_k['bill_user_id'] = data['bill_user_id']
+
+                send_test_data(obj[k])
+                print(f"-------------------------{obj[k]['server']['name']}-------------------------------------", obj[k], "--------------------------------------------------------------")
+
+            time.sleep(30)
+    else:
+        obj = main_speed_test('Пользовательский тариф')
         data_r = {}
         for k in obj:
             data_r[k] = obj[k]
@@ -66,7 +79,8 @@ def start_test():
             obj_k['bill_user_id'] = data['bill_user_id']
 
             send_test_data(obj[k])
-            print(f"-------------------------{obj[k]['server']['name']}-------------------------------------", obj[k], "--------------------------------------------------------------")
+            print(f"-------------------------{obj[k]['server']['name']}-------------------------------------", obj[k],
+                  "--------------------------------------------------------------")
 
         time.sleep(30)
 
