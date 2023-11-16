@@ -54,7 +54,7 @@ def start_test():
     tarif_data = {}
     obj = {}
     print(data['tarif_lists'])
-    if len(data['tarif_lists'] >= 2):
+    if len(data['tarif_lists']) >= 2:
         for a in data['tarif_lists']:
             tarif_data[a['tariff_id']] = a['tariff_name']
         for tarif_ in tarif_data:
